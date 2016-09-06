@@ -7,13 +7,15 @@ public class EarthquakeDetails {
 
     private double magnitude;
     private String place;
-    private String time;
+    private long time;
+    String webLink;
 
 
-    public EarthquakeDetails(double tMagnitude, String tPlace, String tTime) {
+    public EarthquakeDetails(double tMagnitude, String tPlace, long tTime, String tWebLink) {
         magnitude=tMagnitude;
         place=tPlace;
         time=tTime;
+        webLink=tWebLink;
 
     }
 
@@ -26,8 +28,12 @@ public class EarthquakeDetails {
         return place;
     }
 
-    public String getTime () {
+    public long getTime () {
         return time;
+    }
+
+    public String getWebLink () {
+        return webLink;
     }
 
 }
