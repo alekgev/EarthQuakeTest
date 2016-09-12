@@ -57,6 +57,9 @@ public final class QueryUtils {
      */
     public static List<EarthquakeDetails> extractEarthquakes(String requestUrl) {
 
+
+        Log.v(LOG_TAG, "Extract Earthquakes od QueryUtils");
+
         URL url = createUrl(requestUrl);
 
         // Create an empty ArrayList that we can start adding earthquakes to
