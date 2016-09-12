@@ -54,7 +54,9 @@ public final class QueryUtils {
      * Return a list of {@link EarthquakeDetails} objects that has been built up from
      * parsing a JSON response.
      */
-    public static List<EarthquakeDetails> extractEarthquakes() {
+    public static List<EarthquakeDetails> extractEarthquakes(String requestUrl) {
+
+        URL url = createUrl(requestUrl);
 
         // Create an empty ArrayList that we can start adding earthquakes to
         List<EarthquakeDetails> earthquakes = new ArrayList<>();
@@ -101,7 +103,7 @@ public final class QueryUtils {
     }
 
 
-    public static void createUrl(String stringUrl) {
+    public static URL createUrl(String stringUrl) {
         URL url = null;
         try {
             url = new URL(stringUrl);
@@ -114,6 +116,8 @@ public final class QueryUtils {
         } catch (IOException e) {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
+
+        return url;
     }
 
     /**
