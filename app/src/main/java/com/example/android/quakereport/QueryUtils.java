@@ -57,6 +57,11 @@ public final class QueryUtils {
      */
     public static List<EarthquakeDetails> extractEarthquakes(String requestUrl) {
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Log.v(LOG_TAG, "Extract Earthquakes od QueryUtils");
 
